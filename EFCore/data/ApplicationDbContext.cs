@@ -1,13 +1,18 @@
-﻿using EFCore.Models.Entity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using EFCore.Models.Entity;
 
 namespace EFCore.data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        {
-        }
         public DbSet<Employee> Employees { get; set; }
+
+            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)  
+            {
+                optionsBuilder.UseSqlServer("Server=MOXSHANGSHAH\\SQLEXPRESS;Database=EmployeeOnConfigDB;Trusted_Connection=True;TrustServerCertificate=True;");
+            }
+        }
     }
 }

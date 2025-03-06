@@ -25,7 +25,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/", () => "EF Core with OnConfiguring() Setup Running!");
-
+app.MapGet("/", () =>
+{
+    string? env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+    return $"Running in {env} mode!";
+});
 
 app.Run();

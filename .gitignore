@@ -1,0 +1,18 @@
+# Ignore Visual Studio temporary files
+.vs/
+*.suo
+*.user
+*.vscode/
+
+# Ignore EF Core Migrations cache
+bin/
+obj/
+Migrations/
+
+# Ignore build output
+*.dll
+*.exe
+*.log
+
+# Ignore IDE settings
+*.csproj.user

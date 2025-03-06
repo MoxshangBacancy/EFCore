@@ -1,6 +1,0 @@
-@EFCore_OnConfiguring__HostAddress = http://localhost:5250
-
-GET {{EFCore_OnConfiguring__HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
